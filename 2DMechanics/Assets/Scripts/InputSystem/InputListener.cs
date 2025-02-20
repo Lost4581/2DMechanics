@@ -13,6 +13,7 @@ public class InputListener : MonoBehaviour
     {
         inputActions = new();
         inputActions.Player.Move.performed += Move;
+        inputActions.Enable();
     }
 
     private void Move(InputAction.CallbackContext context)
