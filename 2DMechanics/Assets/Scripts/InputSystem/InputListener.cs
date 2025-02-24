@@ -9,6 +9,8 @@ public class InputListener : MonoBehaviour
     private MainControl inputActions;
     private Rigidbody2D rb;
     [SerializeField] private PlayerMovement player;
+    [SerializeField] private Animator anim;
+
     void Awake()
     {
         inputActions = new();
@@ -20,5 +22,6 @@ public class InputListener : MonoBehaviour
     {
         var inputValue = context.ReadValue<Vector2>().normalized;
         player.Move(inputValue);
+        //inputActions.Player.Move.
     }
 }

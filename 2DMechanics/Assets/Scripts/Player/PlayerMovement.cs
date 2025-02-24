@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private LayerMask _layerMask;
-
+    
     private void Update()
     {
         Debug.Log(_rb.velocity);
