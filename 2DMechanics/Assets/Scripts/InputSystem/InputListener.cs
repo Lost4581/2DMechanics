@@ -22,6 +22,5 @@ public class InputListener : MonoBehaviour
     {
         var inputValue = context.ReadValue<Vector2>().normalized;
         player.Move(inputValue);
-        //inputActions.Player.Move.
     }
 }

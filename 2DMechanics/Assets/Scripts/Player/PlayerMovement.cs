@@ -9,10 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private LayerMask _layerMask;
     
-    private void Update()
-    {
-        Debug.Log(_rb.velocity);
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (LayerMaskUtil.ContainsLayer(_layerMask, collision.gameObject.layer))
