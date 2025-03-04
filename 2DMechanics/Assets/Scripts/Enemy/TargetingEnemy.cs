@@ -6,9 +6,11 @@ public class TargetingEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private float startTime;
-    [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Transform Player;
     [SerializeField] private Transform rotateZone;
+    [SerializeField] private Transform shootPosition;
+    [SerializeField] private LayerMask _layerMask;
+    private Vector3 _shootPosition;
     private float currTime;
     private bool isFollowingPlayer = false;
 
@@ -18,14 +20,35 @@ public class TargetingEnemy : MonoBehaviour
     }
     private void Update()
     {
-        currTime -= Time.deltaTime;
-        if (currTime <= 0)
+        if (isFollowingPlayer)
         {
-            currTime = startTime;
-            Instantiate(bulletPref, transform);
+            currTime -= Time.deltaTime;
+            if (currTime <= 0)
+            {
+                currTime = startTime;
+                _shootPosition = shootPosition.TransformPoint(Vector3.zero);
+                Vector3 rot = shootPosition.rotation.eulerAngles;
+                rot = new(rot.x, rot.y, rot.z - 90);
+                Quaternion rotQ = Quaternion.Euler(rot);
+                Instantiate(bulletPref, _shootPosition, rotQ);
+            }
         }
-        Vector2 dir = Player.position - rotateZone.position;
+        Vector2 dir = Player.position - rotateZone.position; 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        rotateZone.transform.Rotate(0, 0, angle);
+        rotateZone.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (LayerMaskUtil.ContainsLayer(_layerMask, collision.gameObject.layer))
+        {
+            isFollowingPlayer = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (LayerMaskUtil.ContainsLayer(_layerMask, collision.gameObject.layer))
+        {
+            isFollowingPlayer = false;
+        }
     }
 }

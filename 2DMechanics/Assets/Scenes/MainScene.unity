@@ -20950,7 +20950,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8117368769413030070}
-  - component: {fileID: 8117368769413030071}
   m_Layer: 9
   m_Name: ShootPosition
   m_TagString: Untagged
@@ -20987,6 +20986,7 @@ GameObject:
   - component: {fileID: 4372491147881188234}
   - component: {fileID: 5064732097639955122}
   - component: {fileID: 3079576210265490125}
+  - component: {fileID: 5064732097639955123}
   m_Layer: 8
   m_Name: TargetEnemy
   m_TagString: Untagged
@@ -21142,6 +21142,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5064732097639955123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400473947177426313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfee256b77a1daa429b03bdaccbfff97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPref: {fileID: 1091468548375393376, guid: 7975eac1fe40cad4ab38aceb254e13ab, type: 3}
+  startTime: 1.5
+  Player: {fileID: 1634309563}
+  rotateZone: {fileID: 382685979}
+  shootPosition: {fileID: 8117368769413030070}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &5243869179787971776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21215,32 +21235,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047617360227154006}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.6700001, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.74, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 382685979}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &8117368769413030071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047617360227154006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfee256b77a1daa429b03bdaccbfff97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPref: {fileID: 1091468548375393376, guid: 7975eac1fe40cad4ab38aceb254e13ab, type: 3}
-  startTime: 3
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  Player: {fileID: 1634309563}
-  rotateZone: {fileID: 382685979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &9134539942408028436
 PrefabInstance:
   m_ObjectHideFlags: 0
