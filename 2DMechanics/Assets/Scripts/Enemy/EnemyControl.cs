@@ -20,11 +20,17 @@ public class EnemyControl : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isFollowingPlayer = true;
+        if (LayerMaskUtil.ContainsLayer(_layerMask, collision.gameObject.layer))
+        {
+            isFollowingPlayer = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isFollowingPlayer = false;
+        if (LayerMaskUtil.ContainsLayer(_layerMask, collision.gameObject.layer))
+        { 
+            isFollowingPlayer = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

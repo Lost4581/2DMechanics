@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class InputListener : MonoBehaviour
 {
     private MainControl inputActions;
-    private Rigidbody2D rb;
     [SerializeField] private PlayerMovement player;
     [SerializeField] private Animator anim;
 
