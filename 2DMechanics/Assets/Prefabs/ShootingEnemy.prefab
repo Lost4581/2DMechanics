@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6399562646071752468}
   - component: {fileID: 2461339085689685551}
   - component: {fileID: 3763462743524396904}
+  - component: {fileID: -49211080532283502}
   m_Layer: 8
   m_Name: ShootingEnemy
   m_TagString: Untagged
@@ -143,6 +144,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-49211080532283502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002368612802826284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96d7adf2501c7c45abbab0a0d43647e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask2:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &1157347191622284787
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class TargetingEnemy : MonoBehaviour
     [SerializeField] private Transform rotateZone;
     [SerializeField] private Transform shootPosition;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private LayerMask _layerMask2;
     private Vector3 _shootPosition;
     private float currTime;
     private bool isFollowingPlayer = false;
@@ -49,6 +50,13 @@ public class TargetingEnemy : MonoBehaviour
         if (LayerMaskUtil.ContainsLayer(_layerMask, collision.gameObject.layer))
         {
             isFollowingPlayer = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (LayerMaskUtil.ContainsLayer(_layerMask2, collision.gameObject.layer))
+        {
+            Destroy(gameObject);
         }
     }
 }

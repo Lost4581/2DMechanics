@@ -10,6 +10,7 @@ public class EnemyControl : MonoBehaviour
     [SerializeField] private Transform Player;
     [SerializeField] private float Speed;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private LayerMask _layerMask2;
     private bool isFollowingPlayer = false;
     void Update()
     {
@@ -37,6 +38,10 @@ public class EnemyControl : MonoBehaviour
         if (LayerMaskUtil.ContainsLayer(_layerMask, collision.gameObject.layer))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (LayerMaskUtil.ContainsLayer(_layerMask2, collision.gameObject.layer))
+        {
+            Destroy(gameObject);
         }
     }
 }
